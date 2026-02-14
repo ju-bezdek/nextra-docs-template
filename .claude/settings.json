@@ -1,0 +1,68 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-settings.json",
+    "permissions": {
+        "allow": [
+            "Bash(*)",
+            "Read(*)",
+            "Write(*)",
+            "Edit(*)",
+            "MultiEdit(*)",
+            "Glob(*)",
+            "Grep(*)",
+            "TodoRead(*)",
+            "TodoWrite(*)",
+            "WebFetch(*)"
+        ],
+        "deny": []
+    },
+    "hooks": {
+        "SessionStart": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python3 /app/hooks/hook_dispatch.py",
+                        "timeout": 10
+                    }
+                ]
+            }
+        ],
+        "Stop": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python3 /app/hooks/hook_dispatch.py",
+                        "timeout": 10
+                    }
+                ]
+            }
+        ],
+        "Notification": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python3 /app/hooks/hook_dispatch.py",
+                        "timeout": 10
+                    }
+                ]
+            }
+        ],
+        "SessionEnd": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python3 /app/hooks/hook_dispatch.py",
+                        "timeout": 10
+                    }
+                ]
+            }
+        ]
+    }
+}
